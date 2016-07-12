@@ -24,10 +24,6 @@ mysql --user="root" --password="secret" -e "FLUSH PRIVILEGES;"
 mysql --user="root" --password="secret" -e "CREATE DATABASE lumber;"
 service mysql restart
 
-# Install Postgres
-
-apt-get install -y postgresql-9.5 postgresql-contrib-9.5
-
 # Configure Postgres Remote Access
 
 sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /etc/postgresql/9.5/main/postgresql.conf
