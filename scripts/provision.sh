@@ -11,6 +11,10 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 echo "LC_ALL=en_US.UTF-8" >> /etc/default/locale
 locale-gen en_US.UTF-8
 
+# Install common tools.
+
+apt-get install -y unzip
+
 # Configure MySQL remote access.
 
 mysql --user="root" --password="secret" -e "CREATE USER 'lumber'@'0.0.0.0' IDENTIFIED BY 'secret';"
