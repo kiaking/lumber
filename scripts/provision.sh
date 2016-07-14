@@ -34,16 +34,17 @@ service postgresql restart
 
 # Install Gulp CLI.
 
+/usr/bin/npm uninstall -g gulp
 /usr/bin/npm install -g gulp-cli
 
 # Install Japanese Font.
 
 wget -O ./NotoSansJapanese.zip https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
 unzip -d ./NotoSansJapanese NotoSansJapanese.zip
-mkdir -p /usr/share/fonts/opentype
+mkdir -p /usr/share/fonts/opentype/NotoSansJapanese
 mv -fv ./NotoSansJapanese /usr/share/fonts/opentype/NotoSansJapanese
 rm -rf ./NotoSansJapanese.zip
-fc-cache -fv
+fc-cache -f -v
 
 # Enable swap memory.
 
